@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:3000/users/login', {
+      const response = await fetch('https://genai-i13e.onrender.com/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (name, email, password) => {
     try {
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('https://genai-i13e.onrender.com/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await fetch('http://localhost:3000/users/logout', {
+      await fetch('https://genai-i13e.onrender.com/users/logout', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

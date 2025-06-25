@@ -25,7 +25,7 @@ const RoadmapDashboard = () => {
   const fetchRoadmaps = async () => {
     try {
       setLoadingRoadmaps(true);
-      const response = await fetch('http://localhost:3000/roadmaps', {
+      const response = await fetch('https://genai-i13e.onrender.com/roadmaps', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -58,7 +58,7 @@ const RoadmapDashboard = () => {
         completedTopics: formData.completedTopics ? formData.completedTopics.split(',').map(topic => topic.trim()) : []
       };
 
-      const response = await fetch('http://localhost:3000/roadmaps/generate', {
+      const response = await fetch('https://genai-i13e.onrender.com/roadmaps/generate', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -85,7 +85,7 @@ const RoadmapDashboard = () => {
 
   const toggleTaskCompletion = async (roadmapId, taskIndex, currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:3000/roadmaps/${roadmapId}/tasks/${taskIndex}`, {
+      const response = await fetch(`https://genai-i13e.onrender.com/roadmaps/${roadmapId}/tasks/${taskIndex}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
