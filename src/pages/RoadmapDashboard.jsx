@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Calendar, CheckCircle, Circle, AlertTriangle, Clock, Target, BookOpen, X, Sparkles, LogOut, ChevronDown, ChevronUp } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import PrerequisiteGraph from '../components/PrerequisiteGraph';
 
 const RoadmapDashboard = () => {
   const { token, user, logout } = useAuth();
@@ -294,6 +295,13 @@ const RoadmapDashboard = () => {
                         ></div>
                       </div>
                     </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      
+                <PrerequisiteGraph 
+                  roadmapId={roadmap._id} 
+                  token={token}
+                />
+              </div>
 
                     {/* Tasks - Expandable */}
                     {isExpanded && (
@@ -348,6 +356,7 @@ const RoadmapDashboard = () => {
                   </div>
                 );
               })}
+              {/* <div></div> */}
             </div>
           )}
         </main>
